@@ -1,32 +1,6 @@
 
 import React from 'react';
-
-const stories = [
-  {
-    title: 'AI-Powered Healthcare App',
-    description: 'Automated cancer histology identification, improving diagnostic accuracy and speed for medical professionals.',
-    tags: ['AI/ML', 'Healthcare', 'Python'],
-    imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'Modern Aging (US Client)',
-    description: 'Developed an AI-driven cognitive & physical health tracking system for seniors, enhancing quality of life.',
-    tags: ['AI', 'Wellness', 'React Native'],
-    imageUrl: 'https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'KidsHub (Education SaaS)',
-    description: 'A comprehensive e-learning platform deployed on AWS with Docker, SSL, and mobile apps for seamless access.',
-    tags: ['SaaS', 'Education', 'AWS', 'Docker'],
-    imageUrl: 'https://images.unsplash.com/photo-1546410531-bb4ac6661a6d?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'Smart Crowd & Lost-and-Found',
-    description: 'A scalable AI + drone-based monitoring solution for large events, recognized at the Simhastha Tech Hackathon.',
-    tags: ['AI', 'Drones', 'Public Safety'],
-    imageUrl: 'https://images.unsplash.com/photo-1571518921503-0857a54a2b9e?q=80&w=800&auto=format&fit=crop',
-  },
-];
+import { caseStudies } from '../data/caseStudies';
 
 interface SuccessStoriesProps {
     limit?: number;
@@ -34,7 +8,7 @@ interface SuccessStoriesProps {
 }
 
 const SuccessStories: React.FC<SuccessStoriesProps> = ({ limit, showHeading = true }) => {
-  const displayedStories = limit ? stories.slice(0, limit) : stories;
+  const displayedStories = limit ? caseStudies.slice(0, limit) : caseStudies;
 
   return (
     <section id="success-stories" className="py-20 bg-slate-900">
@@ -48,26 +22,29 @@ const SuccessStories: React.FC<SuccessStoriesProps> = ({ limit, showHeading = tr
             </div>
         )}
         <div className="grid md:grid-cols-2 gap-8">
-          {displayedStories.map((story, index) => (
-            <div key={index} className="group bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-red-500/50 transition-all duration-300">
+          {displayedStories.map((story) => (
+            <div key={story.slug} className="group bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-red-500/50 transition-all duration-300 flex flex-col">
               <div className="overflow-hidden">
                 <img src={story.imageUrl} alt={story.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-white mb-2">{story.title}</h3>
-                <p className="text-gray-400 mb-4">{story.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-gray-400 mb-4 flex-grow">{story.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
                   {story.tags.map((tag) => (
                     <span key={tag} className="text-xs font-medium bg-slate-700 text-gray-300 px-2 py-1 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
+                 <a href={`#/case-studies/${story.slug}`} className="font-semibold text-red-500 hover:text-red-400 transition-colors duration-200 mt-auto">
+                    Read Case Study &rarr;
+                </a>
               </div>
             </div>
           ))}
         </div>
-        {limit && stories.length > limit && (
+        {limit && caseStudies.length > limit && (
             <div className="text-center mt-12">
                 <a href="#/case-studies" className="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">
                     View All Case Studies

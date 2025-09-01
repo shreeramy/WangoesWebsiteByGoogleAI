@@ -10,6 +10,7 @@ import ServiceAIModelsPage from './pages/ServiceAIModelsPage';
 import ServiceAIAppsPage from './pages/ServiceAIAppsPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 import ContactPage from './pages/ContactPage';
+import CaseStudyDetailPage from './pages/CaseStudyDetailPage';
 
 const App: React.FC = () => {
   const [route, setRoute] = useState(window.location.hash || '#/');
@@ -21,12 +22,20 @@ const App: React.FC = () => {
     };
 
     window.addEventListener('hashchange', handleHashChange);
+    // Set initial route
+    handleHashChange();
+    
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
   const renderPage = () => {
+    if (route.startsWith('#/case-studies/')) {
+        const slug = route.split('/')[2];
+        return <CaseStudyDetailPage slug={slug} />;
+    }
+
     switch (route) {
       case '#/about':
         return <AboutPage />;

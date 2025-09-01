@@ -15,16 +15,16 @@ const WangoesLogo: React.FC<WangoesLogoProps> = ({ className = 'h-10 w-10' }) =>
         xmlns="http://www.w3.org/2000/svg"
         aria-label="Wangoes Logo"
       >
-        <circle cx="50" cy="50" r="50" fill="#EF4444" />
+        <circle cx="50" cy="50" r="48" fill="#EF4444" />
         <path 
-            d="M30 35 H70 M50 35 V50 M30 70 L40 50 L50 65 L60 50 L70 70" 
+            d="M50 28V47L35 72L50 55L65 72L50 47V28H30V34H70V28H50Z"
             stroke="white" 
             strokeWidth="8" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
         />
       </svg>
-      <span className="text-2xl font-bold text-white">Wangoes</span>
+      <span className="text-xl font-bold text-white whitespace-nowrap">Wangoes Technologies</span>
     </div>
   );
 };
