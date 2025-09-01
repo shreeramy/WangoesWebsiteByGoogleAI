@@ -1,26 +1,26 @@
 
 import React from 'react';
-import { CpuChipIcon, CodeBracketIcon } from '../components/icons';
+import { CpuChipIcon, CodeBracketIcon, CloudIcon } from '../components/icons';
 import LeadMagnet from '../components/LeadMagnet';
 
 const services = [
   {
     icon: <CpuChipIcon className="h-8 w-8 text-white" />,
-    title: 'AI Agent Development',
-    description: 'We design and build intelligent AI agents for customer service, sales, marketing, and internal operations to automate tasks and improve efficiency.',
-    href: '#/service-ai-agents',
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M15.75 3v1.5M15.75 21v-1.5M12 4.5v-1.5m0 18v-1.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 12.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg>,
-    title: 'AI Model Development',
-    description: 'Our experts develop custom Machine Learning and Deep Learning models, including NLP and Vision-based AI, to solve unique business challenges.',
-    href: '#/service-ai-models',
+    title: 'AI & Automation',
+    description: 'We design and build intelligent AI agents and automation workflows to boost efficiency and drive growth for your business.',
+    href: '#/service-ai-automation',
   },
   {
     icon: <CodeBracketIcon className="h-8 w-8 text-white" />,
-    title: 'AI-Powered Applications',
+    title: 'Custom Software Development',
     description: 'We build enterprise-grade web and mobile applications with AI at their core, creating intelligent and responsive user experiences.',
-    href: '#/service-ai-apps',
+    href: '#/service-software-development',
+  },
+  {
+    icon: <CloudIcon className="h-8 w-8 text-white" />,
+    title: 'DevOps & Cloud Solutions',
+    description: 'We provide robust, scalable, and secure cloud infrastructure to ensure your applications are reliable and performant.',
+    href: '#/service-devops-cloud',
   },
 ];
 
@@ -31,10 +31,10 @@ const ServicesPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-              Our AI & Automation Services
+              Our Core Services
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-300">
-              We specialize in creating intelligent systems that automate processes, provide valuable insights, and drive business growth. Explore our core AI offerings.
+              We specialize in creating intelligent systems, robust applications, and scalable infrastructure to help you innovate and stay ahead of the curve.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

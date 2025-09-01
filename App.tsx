@@ -6,8 +6,8 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ServiceAIAgentsPage from './pages/ServiceAIAgentsPage';
-import ServiceAIModelsPage from './pages/ServiceAIModelsPage';
 import ServiceAIAppsPage from './pages/ServiceAIAppsPage';
+import ServiceDevOpsPage from './pages/ServiceDevOpsPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 import ContactPage from './pages/ContactPage';
 import CaseStudyDetailPage from './pages/CaseStudyDetailPage';
@@ -41,12 +41,12 @@ const App: React.FC = () => {
         return <AboutPage />;
       case '#/services':
         return <ServicesPage />;
-      case '#/service-ai-agents':
+      case '#/service-ai-automation':
         return <ServiceAIAgentsPage />;
-      case '#/service-ai-models':
-        return <ServiceAIModelsPage />;
-      case '#/service-ai-apps':
+      case '#/service-software-development':
         return <ServiceAIAppsPage />;
+      case '#/service-devops-cloud':
+        return <ServiceDevOpsPage />;
       case '#/case-studies':
         return <CaseStudiesPage />;
       case '#/contact':

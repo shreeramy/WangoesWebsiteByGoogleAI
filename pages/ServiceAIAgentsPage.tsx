@@ -1,68 +1,99 @@
 
 import React from 'react';
-import LeadMagnet from '../components/LeadMagnet';
-import { CpuChipIcon } from '../components/icons';
+import ServicePageHero from '../components/ServicePageHero';
+import ProblemSolutionBlock from '../components/ProblemSolutionBlock';
+import FeaturesGrid from '../components/FeaturesGrid';
+import SuccessStories from '../components/SuccessStories';
+import ProcessSteps from '../components/ProcessSteps';
+import TechStack from '../components/TechStack';
+import WhyWangoes from '../components/WhyWangoes';
+import AIAuditForm from '../components/AIAuditForm';
+import FAQ from '../components/FAQ';
+import FinalCTA from '../components/FinalCTA';
+import { ChatBubbleLeftRightIcon, CpuChipIcon, ArrowPathIcon, PuzzlePieceIcon } from '../components/icons';
 
 const features = [
-  '24/7 Customer Support',
-  'Automated Sales Outreach',
-  'Intelligent Marketing Campaigns',
-  'Streamlined Internal Operations',
-  'Personalized User Experiences',
-  'Data-driven Decision Making'
+  {
+    icon: <ChatBubbleLeftRightIcon className="h-8 w-8 text-white" />,
+    title: 'Autonomous AI Agents',
+    description: 'Deploy intelligent agents for customer support, sales, and operations that work 24/7.',
+  },
+  {
+    icon: <ArrowPathIcon className="h-8 w-8 text-white" />,
+    title: 'Workflow Automation',
+    description: 'Integrate your existing tools (like Slack, GSuite, CRMs) and automate repetitive business processes.',
+  },
+  {
+    icon: <CpuChipIcon className="h-8 w-8 text-white" />,
+    title: 'Custom AI Models',
+    description: 'Develop bespoke Machine Learning models for predictive analytics, NLP, and computer vision tasks.',
+  },
+  {
+    icon: <PuzzlePieceIcon className="h-8 w-8 text-white" />,
+    title: 'No-Code / Low-Code',
+    description: 'Build and deploy powerful automations quickly using platforms like n8n and Make.com.',
+  },
+];
+
+const processSteps = [
+    { id: '1', title: 'Discovery & Audit', description: 'We analyze your current workflows to identify the highest-impact automation opportunities.' },
+    { id: '2', title: 'Strategy & Roadmap', description: 'We design a custom AI and automation strategy tailored to your business goals.' },
+    { id: '3', title: 'Development & Integration', description: 'Our team builds your AI agents and integrates them seamlessly with your existing systems.' },
+    { id: '4', title: 'Training & Deployment', description: 'We train the AI models and deploy the solution, ensuring a smooth transition for your team.' },
+    { id: '5', title: 'Support & Scaling', description: 'We provide ongoing support and help you scale your automation efforts as your business grows.' },
+];
+
+const faqs = [
+    { question: 'How long does it take to deploy an AI agent?', answer: 'Simple agents can be deployed in as little as 7-14 days. More complex, custom models may take 4-8 weeks, depending on data availability and integration requirements.' },
+    { question: 'What kind of ROI can I expect from automation?', answer: 'Clients typically see a significant ROI within 3-6 months, with benefits including a 30-50% reduction in manual task hours, improved customer response times, and increased lead conversion rates.' },
+    { question: 'Do we need to have a data science team?', answer: 'Not at all. We handle the entire process, from data analysis and model development to deployment and maintenance. We act as your extended AI team.' },
+    { question: 'What industries do you specialize in?', answer: 'Our AI and automation solutions are industry-agnostic and have been successfully implemented in healthcare, e-commerce, real estate, education, and professional services.' },
 ];
 
 const ServiceAIAgentsPage: React.FC = () => {
   return (
     <>
-      <section className="pt-32 pb-20 bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2">
-            <div className="w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-                AI Agent Development
-              </h1>
-              <p className="mt-4 text-lg md:text-xl text-gray-300">
-                Build a tireless, intelligent digital workforce. Our custom AI agents automate complex tasks, engage customers 24/7, and unlock unprecedented efficiency for your business.
-              </p>
-              <a href="#/contact" className="mt-8 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition-transform duration-200 hover:scale-105">
-                Start Your AI Agent Project
-              </a>
-            </div>
-            <div className="hidden md:flex items-center justify-center">
-              <CpuChipIcon className="w-64 h-64 text-slate-700" />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="py-20 bg-slate-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-              Transform Your Operations with AI Agents
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
-              From lead nurturing to customer support, AI agents can handle repetitive tasks, allowing your team to focus on high-impact strategic work.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-x-8 gap-y-4">
-            {features.map(feature => (
-              <div key={feature} className="flex items-start">
-                <svg className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-gray-300 text-lg">{feature}</span>
-              </div>
-            ))}
-          </div>
+      <ServicePageHero
+        title={<>Automate 40% of Your Business <span className="text-red-500">in 7 Days</span></>}
+        subtitle="We build and deploy intelligent AI agents and automation workflows that cut costs, boost productivity, and scale your operations."
+        ctaText="Get a Free AI Audit"
+        ctaLink="#ai-audit"
+      />
+      <ProblemSolutionBlock
+        problemTitle="The Problem: Manual Work Kills Productivity"
+        problemDescription="Businesses waste up to 40% of employee time on repetitive, manual tasks like data entry, customer follow-ups, and report generation. This leads to burnout, human error, and missed growth opportunities."
+        solutionTitle="Our Solution: An Intelligent Digital Workforce"
+        solutionDescription={
+          <p>
+            Our AI Agents and automation solutions handle your repetitive tasks, freeing up your team to focus on high-value strategic work. We automate everything from customer support and lead generation to internal operations.
+          </p>
+        }
+      />
+      <FeaturesGrid
+        title="AI & Automation Capabilities"
+        subtitle="We offer a comprehensive suite of services to transform your business operations."
+        features={features}
+      />
+      <SuccessStories limit={2} />
+      <ProcessSteps title="Our 5-Step Automation Process" steps={processSteps} />
+      <TechStack
+        title="Tools & Technologies We Use"
+        techs={['Python', 'TensorFlow', 'n8n', 'Make.com', 'Relevance AI', 'LangChain', 'GCP', 'AWS']}
+      />
+      <WhyWangoes />
+      <section id="ai-audit" className="py-20 bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <AIAuditForm />
         </div>
       </section>
-
-      <LeadMagnet />
+      <FAQ title="Frequently Asked Questions" faqs={faqs} />
+      <FinalCTA
+        title="Ready to Scale with AI?"
+        cta1Text="Get Your Free AI Audit"
+        cta1Link="#ai-audit"
+        cta2Text="Book a Consultation"
+        cta2Link="#/contact"
+      />
     </>
   );
 };

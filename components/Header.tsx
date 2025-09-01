@@ -9,9 +9,9 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-    { name: 'AI Agent Development', href: '#/service-ai-agents' },
-    { name: 'AI Model Development', href: '#/service-ai-models' },
-    { name: 'AI-Powered Applications', href: '#/service-ai-apps' },
+    { name: 'AI & Automation', href: '#/service-ai-automation' },
+    { name: 'Custom Software Development', href: '#/service-software-development' },
+    { name: 'DevOps & Cloud Solutions', href: '#/service-devops-cloud' },
 ];
 
 const Header: React.FC = () => {
@@ -27,6 +27,7 @@ const Header: React.FC = () => {
     const handleHashChange = () => {
       setCurrentPath(window.location.hash || '#/');
       setIsOpen(false); // Close mobile menu on navigation
+      setIsServicesOpen(false); // Close services dropdown on navigation
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -40,7 +41,7 @@ const Header: React.FC = () => {
   }, []);
 
   const getLinkClass = (href: string) => {
-    return currentPath === href || (href.startsWith('#/service') && currentPath.startsWith('#/service'))
+    return currentPath === href
       ? 'text-red-500 font-semibold'
       : 'text-gray-300 hover:text-red-500 transition-colors duration-200 font-medium';
   };
@@ -66,7 +67,7 @@ const Header: React.FC = () => {
                     <svg className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 {isServicesOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-slate-800 rounded-md shadow-lg border border-slate-700 py-1" onMouseLeave={() => setIsServicesOpen(false)}>
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-slate-800 rounded-md shadow-lg border border-slate-700 py-1" onMouseLeave={() => setIsServicesOpen(false)}>
                         {serviceLinks.map((link) => (
                             <a key={link.name} href={link.href} className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-red-500">
                                 {link.name}

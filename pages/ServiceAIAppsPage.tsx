@@ -1,68 +1,95 @@
 
 import React from 'react';
+import ServicePageHero from '../components/ServicePageHero';
+import ProblemSolutionBlock from '../components/ProblemSolutionBlock';
+import FeaturesGrid from '../components/FeaturesGrid';
+import SuccessStories from '../components/SuccessStories';
+import ProcessSteps from '../components/ProcessSteps';
+import TechStack from '../components/TechStack';
+import WhyWangoes from '../components/WhyWangoes';
 import LeadMagnet from '../components/LeadMagnet';
-import { CodeBracketIcon } from '../components/icons';
+import FAQ from '../components/FAQ';
+import FinalCTA from '../components/FinalCTA';
+import { CodeBracketIcon, DevicePhoneMobileIcon, ServerStackIcon, PuzzlePieceIcon } from '../components/icons';
 
 const features = [
-  'Intelligent SaaS Products',
-  'AI-driven Mobile Apps (React Native)',
-  'Smart Dashboards & Analytics',
-  'Personalized User Journeys',
-  'Automated Content Generation',
-  'Robust, Scalable Architectures (MERN, Django)'
+  {
+    icon: <CodeBracketIcon className="h-8 w-8 text-white" />,
+    title: 'Custom Web Applications',
+    description: 'Scalable and secure web apps built with modern frameworks like MERN and Django.',
+  },
+  {
+    icon: <DevicePhoneMobileIcon className="h-8 w-8 text-white" />,
+    title: 'Mobile App Development',
+    description: 'Cross-platform mobile apps for iOS and Android using React Native for fast time-to-market.',
+  },
+  {
+    icon: <ServerStackIcon className="h-8 w-8 text-white" />,
+    title: 'SaaS Product Development',
+    description: 'End-to-end development of multi-tenant SaaS platforms, from concept to launch and scaling.',
+  },
+  {
+    icon: <PuzzlePieceIcon className="h-8 w-8 text-white" />,
+    title: 'API Development & Integrations',
+    description: 'Robust RESTful APIs to connect your software and integrate with third-party services.',
+  },
+];
+
+const processSteps = [
+    { id: '1', title: 'Discovery & Strategy', description: 'We dive deep into your vision, requirements, and user personas to create a detailed project plan.' },
+    { id: '2', title: 'UI/UX Design', description: 'Our designers create intuitive and engaging interfaces that deliver an exceptional user experience.' },
+    { id: '3', title: 'Agile Development', description: 'We build your application in iterative sprints, providing regular updates and incorporating your feedback.' },
+    { id: '4', title: 'Quality Assurance', description: 'Rigorous testing is performed at every stage to ensure a bug-free, reliable, and secure product.' },
+    { id: '5', title: 'Deployment & Support', description: 'We handle the full deployment process and provide ongoing maintenance and support to ensure success.' },
+];
+
+const faqs = [
+    { question: 'What is your typical project timeline?', answer: 'A Minimum Viable Product (MVP) for a web or mobile application typically takes 3-4 months. More complex enterprise-level projects can range from 6 to 12 months.' },
+    { question: 'How much does custom software development cost?', answer: 'Costs vary based on project complexity, features, and team size. We provide a detailed, transparent proposal after our initial discovery call. Contact us for a free estimate.' },
+    { question: 'Do you provide ongoing maintenance and support?', answer: 'Yes, we offer flexible support and maintenance packages to ensure your application remains secure, up-to-date, and performs optimally post-launch.' },
+    { question: 'Can you integrate AI into my existing application?', answer: 'Absolutely. We specialize in integrating custom AI/ML models and AI agents into existing software to enhance functionality and provide intelligent features.' },
 ];
 
 const ServiceAIAppsPage: React.FC = () => {
   return (
     <>
-      <section className="pt-32 pb-20 bg-slate-900 relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2">
-            <div className="w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white">
-                AI-Powered Applications
-              </h1>
-              <p className="mt-4 text-lg md:text-xl text-gray-300">
-                Go beyond standard applications. We engineer intelligent, enterprise-grade web and mobile apps that learn from user interaction, automate features, and deliver unparalleled value.
-              </p>
-              <a href="#/contact" className="mt-8 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition-transform duration-200 hover:scale-105">
-                Build Your Intelligent App
-              </a>
-            </div>
-            <div className="hidden md:flex items-center justify-center">
-              <CodeBracketIcon className="w-64 h-64 text-slate-700" />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="py-20 bg-slate-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-              Infusing Intelligence into Every Interaction
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
-              We leverage modern frameworks like MERN, Django, and React Native to build a robust foundation, then empower it with custom AI integrations.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-x-8 gap-y-4">
-            {features.map(feature => (
-              <div key={feature} className="flex items-start">
-                <svg className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-gray-300 text-lg">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <ServicePageHero
+        title={<>Build Scalable, Intelligent <span className="text-red-500">Software Solutions</span></>}
+        subtitle="We design, build, and scale enterprise-grade web, mobile, and SaaS applications tailored to your unique business needs."
+        ctaText="Book a Free Consultation"
+        ctaLink="#/contact"
+      />
+      <ProblemSolutionBlock
+        problemTitle="The Problem: Off-the-Shelf Isn't Enough"
+        problemDescription="Generic software often fails to address your specific workflows, integration needs, and scaling challenges, limiting your potential and forcing you to adapt your processes to the software."
+        solutionTitle="Our Solution: Technology Built for You"
+        solutionDescription={
+          <p>
+            We build custom software from the ground up, ensuring it perfectly aligns with your business objectives. Our solutions are scalable, secure, and built with an AI-first approach to future-proof your investment.
+          </p>
+        }
+      />
+      <FeaturesGrid
+        title="Custom Development Services"
+        subtitle="From initial concept to final deployment, we provide end-to-end software engineering."
+        features={features}
+      />
+      <SuccessStories limit={2} />
+      <ProcessSteps title="Our Development Process" steps={processSteps} />
+      <TechStack
+        title="Our Technology Stack"
+        techs={['React.js', 'Node.js', 'Python', 'Django', 'React Native', 'MongoDB', 'PostgreSQL', 'AWS']}
+      />
+      <WhyWangoes />
       <LeadMagnet />
+      <FAQ title="Frequently Asked Questions" faqs={faqs} />
+      <FinalCTA
+        title="Ready to Build Your Custom Application?"
+        cta1Text="Book a Free Consultation"
+        cta1Link="#/contact"
+        cta2Text="View Our Case Studies"
+        cta2Link="#/case-studies"
+      />
     </>
   );
 };

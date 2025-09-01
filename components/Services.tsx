@@ -8,21 +8,21 @@ const servicesData = [
     title: 'AI & Automation Services',
     description: 'Leverage the power of AI to automate processes, enhance customer engagement, and drive business efficiency.',
     items: ['AI Agent Development', 'No-Code/Low-Code Automations', 'Business Process Automation', 'Custom ML/DL Models'],
-    link: '#/service-ai-agents',
+    link: '#/service-ai-automation',
   },
   {
     icon: <CodeBracketIcon className="h-10 w-10 text-red-500" />,
     title: 'Custom Software Development',
     description: 'We build robust, scalable, and secure web and mobile applications tailored to your specific business needs.',
     items: ['Web & Mobile Apps (MERN, Django)', 'SaaS Products & Marketplaces', 'CRM/ERP Platforms', 'API Development & Integrations'],
-    link: '#/service-ai-apps',
+    link: '#/service-software-development',
   },
   {
     icon: <CloudIcon className="h-10 w-10 text-red-500" />,
     title: 'DevOps & Cloud Solutions',
     description: 'Ensure your applications are reliable, scalable, and secure with our end-to-end DevOps and cloud services.',
     items: ['Docker, Kubernetes & AWS/GCP', 'CI/CD Pipelines & Cloud Security', 'Database Scaling (PostgreSQL, MongoDB)', 'Cloud Cost Optimization'],
-    link: '#/services',
+    link: '#/service-devops-cloud',
   },
 ];
 
