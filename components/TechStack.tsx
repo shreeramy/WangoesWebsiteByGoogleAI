@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface TechStackProps {
@@ -15,9 +14,9 @@ const TechStack: React.FC<TechStackProps> = ({ title, techs }) => {
             {title}
           </h2>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto">
           {techs.map((tech) => (
-            <div key={tech} className="text-gray-400 font-semibold text-lg hover:text-white transition-colors">
+            <div key={tech} className="bg-slate-700/50 border border-slate-600 text-gray-300 font-medium py-2 px-5 rounded-lg transition-all duration-300 hover:bg-slate-700 hover:border-red-500/50">
               {tech}
             </div>
           ))}

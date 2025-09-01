@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
@@ -12,8 +11,8 @@ const Hero: React.FC = () => {
         <div 
         className="absolute inset-0"
         style={{ 
-            backgroundImage: 'radial-gradient(circle at 30% 20%, rgba(239, 68, 68, 0.1), transparent 30%), radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.1), transparent 30%)',
-            filter: 'blur(60px)'
+            backgroundImage: 'radial-gradient(circle at 25% 30%, rgba(239, 68, 68, 0.15), transparent 40%), radial-gradient(circle at 75% 70%, rgba(59, 130, 246, 0.1), transparent 40%)',
+            filter: 'blur(80px)'
         }}
         ></div>
 
@@ -26,7 +25,7 @@ const Hero: React.FC = () => {
           We empower businesses worldwide with AI agents, enterprise-grade applications, and scalable cloud infrastructure to unlock new opportunities and drive growth.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact" className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">
+          <a href="#contact" className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-red-500/40">
             Book a Free AI Consultation
           </a>
           <a href="#services" className="w-full sm:w-auto bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">

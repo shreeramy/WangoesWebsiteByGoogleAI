@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServicePageHero from '../components/ServicePageHero';
 import ProblemSolutionBlock from '../components/ProblemSolutionBlock';
@@ -83,7 +82,12 @@ const ServiceDevOpsPage: React.FC = () => {
       <WhyWangoes />
       <section id="infra-audit" className="py-20 bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <AIAuditForm />
+            <AIAuditForm
+                title="Get Your Free Infrastructure Audit"
+                subtitle="Discover opportunities to improve your cloud performance, security, and costs."
+                ctaText="Get My Free Infrastructure Audit"
+                challengePlaceholder="What is your biggest infrastructure challenge? (e.g., high costs, downtime, security)"
+            />
         </div>
       </section>
       <FAQ title="Frequently Asked Questions" faqs={faqs} />

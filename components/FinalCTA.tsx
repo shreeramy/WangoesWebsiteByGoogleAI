@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface FinalCTAProps {
@@ -18,7 +17,7 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ title, cta1Text, cta1Link, cta2Text
             {title}
           </h2>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={cta1Link} className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">
+            <a href={cta1Link} className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-red-500/40">
               {cta1Text}
             </a>
             <a href={cta2Link} className="w-full sm:w-auto bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">

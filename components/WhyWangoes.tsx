@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { GlobeAltIcon, PuzzlePieceIcon, LightBulbIcon, ChartBarIcon } from './icons';
 
@@ -37,7 +36,7 @@ const WhyWangoes: React.FC = () => {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="text-center p-6 bg-slate-700/50 rounded-lg">
+            <div key={index} className="text-center p-6 bg-slate-700/50 rounded-lg border border-transparent hover:border-red-500/50 transition-all duration-300 transform hover:-translate-y-1">
               <div className="flex items-center justify-center h-16 w-16 rounded-full bg-red-600 mx-auto mb-5">
                 {feature.icon}
               </div>
