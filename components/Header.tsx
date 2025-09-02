@@ -50,7 +50,7 @@ const Header: React.FC = () => {
 
   return (
     <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-slate-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isOpen ? 'bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-700/50' : 'bg-transparent'}`}
         onMouseLeave={() => setIsServicesOpen(false)}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,18 +58,18 @@ const Header: React.FC = () => {
           <a href="#/" aria-label="Homepage" onClick={() => setIsOpen(false)}>
             <WangoesLogo />
           </a>
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <div className="relative" onMouseEnter={() => setIsServicesOpen(true)}>
                 <button
-                    className={`flex items-center ${isServicesActive ? 'text-red-500 font-semibold' : 'text-gray-300 font-medium'} hover:text-red-500 transition-colors duration-200`}
+                    className={`flex items-center gap-1 ${isServicesActive ? 'text-red-500 font-semibold' : 'text-gray-300 font-medium'} hover:text-red-500 transition-colors duration-200`}
                 >
                     Services
-                    <svg className={`w-4 h-4 ml-1 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 {isServicesOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-slate-800 rounded-md shadow-lg border border-slate-700 py-1" onMouseLeave={() => setIsServicesOpen(false)}>
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-slate-800 rounded-lg shadow-2xl border border-slate-700 py-2" onMouseLeave={() => setIsServicesOpen(false)}>
                         {serviceLinks.map((link) => (
-                            <a key={link.name} href={link.href} className="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-red-500">
+                            <a key={link.name} href={link.href} className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-slate-700 hover:text-red-500 transition-colors duration-200 rounded-md mx-1">
                                 {link.name}
                             </a>
                         ))}
@@ -81,22 +81,22 @@ const Header: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#/contact" className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-transform duration-200 hover:scale-105">
+            <a href="#/contact" className="bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-5 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/30 transform">
               Book a Consultation
             </a>
-          </div>
+          </nav>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300 hover:text-white" aria-label="Open menu">
-              {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+              {isOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
             </button>
           </div>
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-slate-900/95`}>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-slate-900/95 backdrop-blur-sm`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <div className="px-3">
-            <h3 className="text-gray-400 font-bold mt-2">Services</h3>
+            <h3 className="text-gray-400 font-bold mt-2 mb-1 uppercase text-sm tracking-wider">Services</h3>
             {serviceLinks.map((link) => (
                <a key={link.name} href={link.href} className={`block pl-3 py-2 rounded-md text-base ${getLinkClass(link.href)}`}>
                 {link.name}
@@ -108,8 +108,8 @@ const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <div className="p-3">
-            <a href="#/contact" className="block w-full text-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-md transition-transform duration-200 hover:scale-105">
+          <div className="p-4 mt-2">
+            <a href="#/contact" className="block w-full text-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-3 rounded-lg transition-transform duration-200 hover:scale-105">
                 Book a Consultation
             </a>
           </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { caseStudies } from '../data/caseStudies';
 
@@ -14,7 +13,7 @@ const SuccessStories: React.FC<SuccessStoriesProps> = ({ limit, showHeading = tr
     <section id="success-stories" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {showHeading && (
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 scroll-animate fade-in-up">
             <h2 className="text-base font-semibold text-red-500 tracking-wider uppercase">Success Stories</h2>
             <p className="mt-2 text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                 Delivering Impactful Solutions
@@ -22,8 +21,8 @@ const SuccessStories: React.FC<SuccessStoriesProps> = ({ limit, showHeading = tr
             </div>
         )}
         <div className="grid md:grid-cols-2 gap-8">
-          {displayedStories.map((story) => (
-            <div key={story.slug} className="group bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-red-500/50 transition-all duration-300 flex flex-col">
+          {displayedStories.map((story, index) => (
+            <div key={story.slug} className="group bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-red-500/50 transition-all duration-300 flex flex-col scroll-animate fade-in-up" style={{ transitionDelay: `${index * 150}ms` }}>
               <div className="overflow-hidden">
                 <img src={story.imageUrl} alt={story.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
@@ -45,7 +44,7 @@ const SuccessStories: React.FC<SuccessStoriesProps> = ({ limit, showHeading = tr
           ))}
         </div>
         {limit && caseStudies.length > limit && (
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 scroll-animate fade-in-up">
                 <a href="#/case-studies" className="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">
                     View All Case Studies
                 </a>

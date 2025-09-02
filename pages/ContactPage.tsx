@@ -6,7 +6,7 @@ const ContactPage: React.FC = () => {
   return (
     <section id="contact" className="pt-32 pb-20 bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 scroll-animate fade-in-up">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white">
               Ready to Start Your AI Journey?
             </h1>
@@ -15,8 +15,10 @@ const ContactPage: React.FC = () => {
             </p>
         </div>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-            <ContactForm />
-            <div className="text-left md:pt-4">
+            <div className="scroll-animate fade-in-up" style={{ transitionDelay: '200ms' }}>
+              <ContactForm />
+            </div>
+            <div className="text-left md:pt-4 scroll-animate fade-in-up" style={{ transitionDelay: '400ms' }}>
                 <h3 className="text-3xl font-bold text-white mb-6">Contact Details</h3>
                 <div className="space-y-6">
                     <div className="flex items-start">

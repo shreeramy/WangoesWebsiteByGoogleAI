@@ -23,7 +23,7 @@ const AIAuditForm: React.FC<AIAuditFormProps> = ({
 
   if (submitted) {
     return (
-      <div className="text-center bg-slate-700/50 p-8 rounded-lg border border-green-500">
+      <div className="text-center bg-slate-700/50 p-8 rounded-lg border border-green-500 scroll-animate fade-in">
         <h3 className="text-2xl font-bold text-white">Thank You!</h3>
         <p className="text-gray-300 mt-2">
           Your request has been received. Our team will review your information and get in touch within 24 hours to schedule a call.
@@ -33,7 +33,7 @@ const AIAuditForm: React.FC<AIAuditFormProps> = ({
   }
 
   return (
-    <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 shadow-2xl shadow-slate-900/50">
+    <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 shadow-2xl shadow-slate-900/50 scroll-animate fade-in-up">
       <h3 className="text-2xl font-bold text-white text-center mb-1">{title}</h3>
       <p className="text-gray-400 text-center mb-6">{subtitle}</p>
       <form onSubmit={handleSubmit}>

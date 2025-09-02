@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ServicePageHeroProps {
@@ -20,13 +19,13 @@ const ServicePageHero: React.FC<ServicePageHeroProps> = ({ title, subtitle, ctaT
         }}
         ></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 relative">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight scroll-animate fade-in-up">
           {title}
         </h1>
-        <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+        <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-300 scroll-animate fade-in-up" style={{ transitionDelay: '200ms' }}>
           {subtitle}
         </p>
-        <div className="mt-10">
+        <div className="mt-10 scroll-animate fade-in-up" style={{ transitionDelay: '400ms' }}>
           <a href={ctaLink} className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-md transition-transform duration-300 hover:scale-105 transform">
             {ctaText}
           </a>

@@ -1,19 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wangoes Technologies | AI Automation & Custom Software</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Wangoes Technologies is a global IT services and AI automation company specializing in AI Agents, custom software development, and cloud solutions to help businesses scale and innovate." />
+    <meta name="keywords" content="AI automation, custom software development, DevOps, cloud solutions, AI agents, enterprise applications, MERN stack, Python Django" />
+    <link rel="canonical" href="https://wangoes-technologies.web.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wangoes-technologies.web.app/" />
+    <meta property="og:title" content="Wangoes Technologies | AI Automation & Custom Software" />
+    <meta property="og:description" content="Wangoes Technologies specializes in AI Agents, custom software development, and cloud solutions to help businesses scale and innovate." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1620712943543-95fc69614534?q=80&w=1200&auto=format&fit=crop" />
+    <meta property="og:site_name" content="Wangoes Technologies" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://wangoes-technologies.web.app/" />
+    <meta name="twitter:title" content="Wangoes Technologies | AI Automation & Custom Software" />
+    <meta name="twitter:description" content="Wangoes Technologies specializes in AI Agents, custom software development, and cloud solutions to help businesses scale and innovate." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1620712943543-95fc69614534?q=80&w=1200&auto=format&fit=crop" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --slate-900: #0F172A;
+        --slate-800: #1E293B;
+        --slate-700: #334155;
+        --slate-600: #475569;
+        --slate-500: #64748B;
+        --red-500: #EF4444;
+        --red-600: #DC2626;
+        --red-400: #F87171;
+        --white: #FFFFFF;
+        --gray-200: #E5E7EB;
+        --gray-300: #D1D5DB;
+        --gray-400: #9CA3AF;
+      }
       body {
         font-family: 'Inter', sans-serif;
+        background-color: var(--slate-900);
+        color: var(--gray-200);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .scroll-animate.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .animated-gradient {
+        background-size: 200% 200%;
+        animation: gradient-animation 10s ease infinite;
+      }
+      @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Wangoes Technologies",
+      "url": "https://wangoes-technologies.web.app/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@wangoes.com"
+      }
+    }
+    </script>
   <script type="importmap">
 {
   "imports": {

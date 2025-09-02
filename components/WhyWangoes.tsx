@@ -26,18 +26,18 @@ const features = [
 
 const WhyWangoes: React.FC = () => {
   return (
-    <section id="why-wangoes" className="py-20 bg-slate-800">
+    <section id="why-wangoes" className="py-24 bg-slate-800/70">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16 scroll-animate fade-in-up">
           <h2 className="text-base font-semibold text-red-500 tracking-wider uppercase">Why Choose Us</h2>
-          <p className="mt-2 text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          <p className="mt-2 text-3xl lg:text-5xl font-extrabold text-white tracking-tighter">
             Your Partner in Digital Transformation
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="text-center p-6 bg-slate-700/50 rounded-lg border border-transparent hover:border-red-500/50 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-red-600 mx-auto mb-5">
+            <div key={index} className="text-center p-8 bg-slate-800 rounded-xl border border-slate-700/80 transition-all duration-300 transform hover:-translate-y-2 hover:border-red-500/50 hover:shadow-2xl hover:shadow-red-900/20 scroll-animate fade-in-up group" style={{ transitionDelay: `${index * 150}ms` }}>
+              <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 mx-auto mb-6 transition-all duration-300 group-hover:scale-110">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>

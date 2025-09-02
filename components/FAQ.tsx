@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDownIcon } from './icons';
 
@@ -47,14 +46,16 @@ const FAQ: React.FC<FAQProps> = ({ title, faqs }) => {
     <section className="py-20 bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 scroll-animate fade-in-up">
             <h2 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
               {title}
             </h2>
           </div>
           <div className="space-y-2">
             {faqs.map((faq, index) => (
-              <FAQItemComponent key={index} item={faq} />
+              <div key={index} className="scroll-animate fade-in-up" style={{ transitionDelay: `${index * 100}ms` }}>
+                <FAQItemComponent item={faq} />
+              </div>
             ))}
           </div>
         </div>

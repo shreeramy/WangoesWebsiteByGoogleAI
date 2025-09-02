@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CpuChipIcon, CodeBracketIcon, CloudIcon } from '../components/icons';
 import LeadMagnet from '../components/LeadMagnet';
@@ -29,7 +28,7 @@ const ServicesPage: React.FC = () => {
     <>
       <section className="pt-32 pb-20 bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-16 scroll-animate fade-in-up">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white">
               Our Core Services
             </h1>
@@ -38,8 +37,8 @@ const ServicesPage: React.FC = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <a href={service.href} key={service.title} className="block p-8 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
+            {services.map((service, index) => (
+              <a href={service.href} key={service.title} className="block p-8 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-red-500 hover:-translate-y-1 transition-all duration-300 scroll-animate fade-in-up" style={{ transitionDelay: `${index * 150}ms` }}>
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-red-600 mb-5">
                   {service.icon}
                 </div>
